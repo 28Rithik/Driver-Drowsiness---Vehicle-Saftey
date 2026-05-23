@@ -1,0 +1,29 @@
+# Dataset folders
+dataset/
+datasets/
+data/
+
+# Images and videos
+*.jpg
+*.jpeg
+*.png
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# ML model files
+*.pt
+*.pth
+*.h5
+*.onnx
+*.ckpt
+models/
+
+# Python cache
+__pycache__/
+*.pyc
+
+
+venv/
+.env/
