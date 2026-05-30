@@ -4,7 +4,9 @@ datasets/
 data/
 Data Sets
 NTHU_Dataset/
-
+prepared_nthu_dataset/
+cleaned_nthu_dataset/
+Example/
 # Images and videos
 *.jpg
 *.jpeg
