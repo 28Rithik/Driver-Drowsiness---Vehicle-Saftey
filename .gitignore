@@ -7,6 +7,9 @@ NTHU_Dataset/
 prepared_nthu_dataset/
 cleaned_nthu_dataset/
 Example/
+scripts/s
+
+
 # Images and videos
 *.jpg
 *.jpeg
