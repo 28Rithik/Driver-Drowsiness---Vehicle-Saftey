@@ -2,18 +2,18 @@ task: detect
 mode: train
 model: yolo26n.pt
 data: yolo_face_parts_dataset/data.yaml
-epochs: 50
+epochs: 34
 time: null
 patience: 100
 batch: 32
-imgsz: 350
+imgsz: 256
 save: true
 save_period: -1
 cache: false
 device: '0'
 workers: 4
 project: null
-name: train-14
+name: train-13
 exist_ok: false
 pretrained: true
 optimizer: auto
@@ -107,4 +107,4 @@ auto_augment: randaugment
 erasing: 0.4
 cfg: null
 tracker: botsort.yaml
-save_dir: /home/rithik-ca/Documents/Machine Learning Projects/driver project/runs/detect/train-14
+save_dir: /home/rithik-ca/Documents/Machine Learning Projects/driver project/runs/detect/train-13
