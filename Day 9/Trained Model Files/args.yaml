@@ -2,11 +2,11 @@ task: detect
 mode: train
 model: yolo26n.pt
 data: yolo_face_parts_dataset/data.yaml
-epochs: 34
+epochs: 50
 time: null
 patience: 100
 batch: 32
-imgsz: 256
+imgsz: 512
 save: true
 save_period: -1
 cache: false
