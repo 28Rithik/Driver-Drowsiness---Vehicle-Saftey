@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Driver Drowsiness Detection</title>
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+background:#0f172a;
+font-family:Arial,sans-serif;
+color:white;
+margin:0;
+padding:20px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+h1{
+text-align:center;
+margin-bottom:30px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:15px;
+margin-bottom:25px;
+}
+
+button{
+background:#3b82f6;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:8px;
+cursor:pointer;
+}
+
+button:hover{
+opacity:.9;
+}
+
+input,
+select{
+width:100%;
+padding:10px;
+margin-top:10px;
+margin-bottom:15px;
+border-radius:8px;
+border:none;
+}
+
+img{
+width:100%;
+border-radius:15px;
+}
+
+video{
+width:100%;
+border-radius:15px;
+}
+
+.live-camera{
+width:100%;
+border-radius:15px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+@media(max-width:768px){
+.grid{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🚗 Driver Drowsiness Detection System</h1>
+
+<div class="card">
+
+<h2>Select Model</h2>
+
+<form action="/select_model" method="POST">
+
+<select name="model">
+
+<option value="best">best.pt</option>
+
+<option value="last">last.pt</option>
+
+</select>
+
+<button type="submit">
+Load Model
+</button>
+
+</form>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<h2>Upload Image</h2>
+
+<form action="/upload_image"
+method="POST"
+enctype="multipart/form-data">
+
+<input
+type="file"
+name="image"
+required>
+
+<button type="submit">
+Analyze Image
+</button>
+
+</form>
+
+{% if result_image %}
+
+<hr>
+
+<h3>Result</h3>
+
+<img src="{{ result_image }}">
+
+{% endif %}
+
+</div>
+
+<div class="card">
+
+<h2>Upload Video</h2>
+
+<form action="/upload_video"
+method="POST"
+enctype="multipart/form-data">
+
+<input
+type="file"
+name="video"
+required>
+
+<button type="submit">
+Analyze Video
+</button>
+
+</form>
+
+{% if result_video %}
+
+<hr>
+
+<h3>Processed Video</h3>
+
+<video controls>
+
+<source
+src="{{ result_video }}"
+type="video/mp4">
+
+</video>
+
+{% endif %}
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>📹 Live Webcam Detection</h2>
+
+<img
+class="live-camera"
+src="{{ url_for('video_feed') }}">
+
+</div>
+
+</div>
+
+</body>
+</html>
